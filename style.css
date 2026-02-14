@@ -1,0 +1,170 @@
+:root {
+    --heart-color-light: #9747ff;
+    --heart-color-medium: #9747ff;
+    --heart-color-dark:#9747ff;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* Fondo de cielo nocturno */
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    overflow: hidden;
+    position: relative;
+}
+
+/* Efecto de Estrellas en CSS puro */
+.stars {
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    /* Generamos muchas estrellitas usando sombras */
+    box-shadow: 
+        10vw 20vh #fff, 20vw 80vh #fff, 30vw 40vh #fff, 40vw 60vh #fff, 
+        50vw 10vh #fff, 60vw 70vh #fff, 70vw 30vh #fff, 80vw 90vh #fff, 
+        90vw 50vh #fff, 15vw 15vh #fff, 25vw 75vh #fff, 35vw 35vh #fff, 
+        45vw 85vh #fff, 55vw 25vh #fff, 65vw 65vh #fff, 75vw 45vh #fff, 
+        85vw 95vh #fff, 95vw 55vh #fff, 5vw 90vh #fff, 85vw 10vh #fff;
+
+    animation: twinkle 4s infinite alternate;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+
+@keyframes twinkle {
+    0% { opacity: 0.3; }
+    100% { opacity: 1; }
+}
+ .img { background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 0px 0px;
+    width: 100%;
+    max-width: 400px;
+    height: 350px;
+    display: flex;
+    margin: 90px;
+
+}
+/* Contenedor principal */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+    max-width: 1000px;
+    width: 90%;
+    z-index: 10;
+}
+
+/* Panel Izquierdo (Tarjetas) */
+.left-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1;
+    min-width: 300px;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    color: #333;
+}
+
+.card p {
+    margin: 10px 0;
+    line-height: 1.5;
+}
+
+.love-message {
+    color: var(--heart-color-dark);
+    font-size: 1.1em;
+}
+
+.signature {
+    color: var(--heart-color-medium);
+    font-weight: bold;
+    margin-top: 15px !important;
+}
+
+.timer-label {
+    font-size: 1.1em;
+    color: #555;
+    font-weight: bold;
+}
+
+.timer {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: var(--heart-color-dark);
+    margin-top: 10px;
+}
+
+/* Panel Derecho (Árbol) */
+.right-panel {
+    flex: 0;
+    display: flex;
+    justify-content: center;
+    min-width: 100px;
+   
+}
+
+
+.tree-container {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 40px 20px;
+    width: 100%;
+    max-width: 400px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.tree {
+    position: relative;
+    width: 150px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.trunk {
+    width: 25px;
+    height: 100px;
+    background-color: var(--tree-color);
+    border-radius: 5px 5px 0 0;
+    position: absolute;
+    bottom: 0;
+}
+
+.leaves {
+
+    animation: growTree 3s ease-out forwards;
+}
+
+
+
+/* Responsividad para móviles */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 20px 0;
+        height: 100%;
+        overflow-y: auto;
+    }
+}
